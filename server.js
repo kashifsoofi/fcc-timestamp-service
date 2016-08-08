@@ -37,6 +37,7 @@ app.get('/:date', function (req, res) {
   }
 });
 
+var port = process.env.PORT || 8080;
 app.listen(8080, function () {
-  console.log('Example app listening on port 8080!');
+  console.log('Example app listening on port ' + port + '!');
 });
