@@ -38,6 +38,6 @@ app.get('/:date', function (req, res) {
 });
 
 var port = process.env.PORT || 8080;
-app.listen(8080, function () {
+app.listen(port, function () {
   console.log('Timestamp microservice listening on port ' + port + '!');
 });
