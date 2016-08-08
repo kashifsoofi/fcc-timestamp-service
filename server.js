@@ -13,20 +13,21 @@ app.get('/', function (req, res) {
   res.render('index', { appUrl: appUrl });
 });
 
-app.get('/:date', function (req, res) {
+app.get('/:query', function (req, res) {
   var format = "";
-  if (req.params.date === parseInt(req.params.date, 10)) {
+  if (/^\d+$/.test(req.params.query)) {
     format = "X";
   }
   else {
     format = "MMMM D, YYYY";
   }
-  var date = moment(req.params.date, format);
+  console.log('query: ' + req.params.query + '  format: ' + format);
+  var date = moment(req.params.query, format);
   
   if (date.isValid()) {
     res.json({
       unix: date.format("X"),
-      natural: date.format("MMM D, YYYY")
+      natural: date.format("MMMM D, YYYY")
     });
   }
   else {
