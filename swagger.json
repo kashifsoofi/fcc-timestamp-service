@@ -1,0 +1,49 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "freeCodeCamp Timestamp Microservice API",
+    "description": "freeCodeCamp Timestamp Microservice API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Timestamp",
+      "description": "API to get unix timestamp and natural language date from either"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/{param}": {
+      "parameters": [
+        {
+          "name": "param",
+          "in": "path",
+          "required": true,
+          "description": "Unix timestamp or natural language date",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "summary": "Return unix timestamp and natural language date",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
